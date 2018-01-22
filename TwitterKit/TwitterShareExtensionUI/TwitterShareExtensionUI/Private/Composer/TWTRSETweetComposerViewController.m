@@ -313,9 +313,14 @@ static void *TSETweetTextKVOCOntext = &TSETweetTextKVOCOntext;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
 
-    [_tweetTextViewContainer configureWithTweet:self.dataSource.composedTweet];
 
     [self.dataSource registerCellClassesInTableView:self.tableView];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [_tweetTextViewContainer configureWithTweet:self.dataSource.composedTweet];
 }
 
 - (void)updateViewConstraints
